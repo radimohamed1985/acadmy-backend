@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\blog;
 use App\Models\courses;
+use App\Models\student;
 use App\Models\team;
 use Illuminate\Http\Request;
 
@@ -17,4 +18,9 @@ class test extends Controller
     $dr = team::with('courses')->get();
     return $dr;
 }
+public function test3(){
+    $res = student::with('courses')->get();
+    return $res;
+}
+
 }

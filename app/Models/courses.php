@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class courses extends Model
 {
     protected $table ='courses';
-    protected $fillable = ['id','course_name','price','instructor_id','lecture'];
+    protected $fillable = ['id','course_name','price','instructor_id','lecture','hour'];
     public $timestamp = true;
-    public function team(){
-        return $this->belongsTo('App\models\team','instructor_id');
+    public function student(){
+        return $this->belongsToMany('App\models\student','reservation','user_id','course_id');
     }
 }
